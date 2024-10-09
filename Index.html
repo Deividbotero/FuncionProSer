@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Style.css">
+    <title>Calendario de Agendamiento de Servicios Técnicos</title>
+</head>
+<body>
+    <header class="header">
+        <h1>Calendario de Agendamiento de Servicios Técnicos</h1>
+    </header>
+        <main>
+            <section class="calendar-section">
+                <div class="calendar-header">
+                    <button id="prevMonth" class="nav-btn">&#8249;</button>
+                    <h2 id="monthAndYear"></h2>
+                    <button id="nextMonth" class="nav-btn">&#8250;</button>
+                </div>
+                <table class="calendar-table">
+                    <thead>
+                        <tr>
+                            <th>Do</th>
+                            <th>Lu</th>
+                            <th>Ma</th>
+                            <th>Mi</th>
+                            <th>Ju</th>
+                            <th>Vi</th>
+                            <th>Sa</th>
+                        </tr>
+                    </thead>
+                    <tbody id="calendarBody">
+                </tbody>
+            </table>
+        </section>
+
+        <section class="modal" id="serviceModal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h2>Agendar Servicio</h2>
+                <p id="serviceDate"></p>
+                <form id="serviceForm">
+                    <select id="serviceInput" required>
+                        <option value="" disabled selected>Seleccione un servicio</option>
+                        <option value="Mecánica">Mecánica</option>
+                        <option value="Carpintería">Carpintería</option>
+                        <option value="Plomería">Plomería</option>
+                        <option value="Electricidad">Electricidad</option>
+                        <option value="Jardinería">Jardinería</option>
+                        <option value="Pintura">Pintura</option>
+                        <option value="Limpieza">Limpieza</option>
+                        <option value="Mudanza">Mudanza</option>
+                        <option value="Reparación de Electrodomésticos">Reparación de Electrodomésticos</option>
+                        <option value="Cuidado de Mascotas">Cuidado de Mascotas</option>
+                        <option value="Asesoría Legal">Asesoría Legal</option>
+                    </select>
+
+                    <div class="address-range">
+                        <label for="serviceAddress">Dirección de servicio (Bogotá):</label>
+                        <input type="text" id="serviceAddress" placeholder="Ej: Calle 45 #20-30, Bogotá" required>
+                        <small id="addressHelp" class="form-text">Formato recomendado: Calle, Carrera, Avenida seguido del número.</small>
+                    </div>
+
+                    <div class="time-range">
+                        <label for="serviceStartTime">Hora de Inicio:</label>
+                        <input type="time" id="serviceStartTime" required>
+                    </div>
+                    <div class="time-range">
+                        <label for="serviceEndTime">Hora de Fin:</label>
+                        <input type="time" id="serviceEndTime" required>
+                    </div>
+                    <button type="submit" class="btn-primary">Guardar Servicio</button>
+                </form>
+                <div class="message" id="message"></div>
+            </div>
+        </section>
+
+        <section class="service-list-container">
+            <h3>Servicios Agendados</h3>
+            <ul class="service-list" id="services"></ul>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
